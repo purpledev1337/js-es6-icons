@@ -131,3 +131,77 @@ allIconsList.forEach((icon, index) => {
 	// Per ogni elemento dell'array gli inserisco il rispettivo colore in style
 	document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
 })
+
+// Milestone 3
+// Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l’utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
+// Creo altri array contenenti icone della stessa tipologia
+const animalIcons = allIconsList.filter((icon) => {
+	if (icon.type == "animal") {
+		return true
+	}
+});
+console.log(animalIcons);
+
+const vegetIcons = allIconsList.filter((icon) => {
+	if (icon.type == "vegetable") {
+		return true
+	}
+});
+console.log(vegetIcons);
+
+const userIcons = allIconsList.filter((icon) => {
+	if (icon.type == "user") {
+		return true
+	}
+});
+console.log(userIcons);
+
+// seleziono il select da cui voglio estrarre i valori
+const selectFilter = document.querySelector('.icons_filter');
+
+// evento che al cambio del valore del select mi ristampa la lista in base al valore che trova
+selectFilter.addEventListener('change', (event) => {
+	document.querySelector(".icon-container").innerHTML = "";
+	if (event.target.value == "animal") {
+		animalIcons.forEach((icon, index) => {
+			document.querySelector(".icon-container").innerHTML +=
+			`<div class="icon-js">
+				<i class="${icon.family} ${icon.prefix}${icon.name}"></i>
+				<div class="icon_name">${icon.name}</div>
+			</div>`;
+		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
+
+		});
+	} if (event.target.value == "vegetable") {
+		document.querySelector(".icon-container").innerHTML = "";
+		vegetIcons.forEach((icon, index) => {
+			document.querySelector(".icon-container").innerHTML +=
+			`<div class="icon-js">
+				<i class="${icon.family} ${icon.prefix}${icon.name}"></i>
+				<div class="icon_name">${icon.name}</div>
+			</div>`;
+		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
+
+		});
+	} if (event.target.value == "user") {
+		document.querySelector(".icon-container").innerHTML = "";
+		userIcons.forEach((icon, index) => {
+			document.querySelector(".icon-container").innerHTML +=
+			`<div class="icon-js">
+				<i class="${icon.family} ${icon.prefix}${icon.name}"></i>
+				<div class="icon_name">${icon.name}</div>
+			</div>`;
+		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
+		});
+	}if (event.target.value == "all") {
+		document.querySelector(".icon-container").innerHTML = "";
+		allIconsList.forEach((icon, index) => {
+			document.querySelector(".icon-container").innerHTML +=
+		`<div class="icon-js">
+			<i class="${icon.family} ${icon.prefix}${icon.name}"></i>
+			<div class="icon_name">${icon.name}</div>
+		</div>`;
+		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
+		})
+	}
+});

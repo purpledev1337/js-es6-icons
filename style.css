@@ -14,7 +14,7 @@ nav {
     font-size: 2em;
 }
 
-#icons_type {
+.icons_filter {
     font-size: 0.8em;
 }
 
@@ -41,7 +41,7 @@ nav, .icon.icon {
 }
 
 .icon-js i {
-    transform: scale(2);
+    font-size: 2em;
     margin-bottom: 10px;
 }
 
