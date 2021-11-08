@@ -170,10 +170,10 @@ selectFilter.addEventListener('change', (event) => {
 				<div class="icon_name">${icon.name}</div>
 			</div>`;
 		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
-
+		console.log(icon);
+		console.log(icon.color);
 		});
 	} if (event.target.value == "vegetable") {
-		document.querySelector(".icon-container").innerHTML = "";
 		vegetIcons.forEach((icon, index) => {
 			document.querySelector(".icon-container").innerHTML +=
 			`<div class="icon-js">
@@ -181,10 +181,10 @@ selectFilter.addEventListener('change', (event) => {
 				<div class="icon_name">${icon.name}</div>
 			</div>`;
 		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
-
+		console.log(icon);
+		console.log(icon.color);
 		});
 	} if (event.target.value == "user") {
-		document.querySelector(".icon-container").innerHTML = "";
 		userIcons.forEach((icon, index) => {
 			document.querySelector(".icon-container").innerHTML +=
 			`<div class="icon-js">
@@ -192,9 +192,11 @@ selectFilter.addEventListener('change', (event) => {
 				<div class="icon_name">${icon.name}</div>
 			</div>`;
 		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
+		console.log(icon);
+		console.log(icon.color);
+
 		});
 	}if (event.target.value == "all") {
-		document.querySelector(".icon-container").innerHTML = "";
 		allIconsList.forEach((icon, index) => {
 			document.querySelector(".icon-container").innerHTML +=
 		`<div class="icon-js">
@@ -202,6 +204,11 @@ selectFilter.addEventListener('change', (event) => {
 			<div class="icon_name">${icon.name}</div>
 		</div>`;
 		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
+		console.log(icon);
+		console.log(icon.color);
+
 		})
 	}
-});
+
+}
+);
