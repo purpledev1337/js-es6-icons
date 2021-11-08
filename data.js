@@ -130,7 +130,7 @@ allIconsList.forEach((icon, index) => {
 	// Ciascuna icona ha una proprietà “color”: utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
 	// Per ogni elemento dell'array gli inserisco il rispettivo colore in style
 	document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
-})
+});
 
 // Milestone 3
 // Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l’utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
@@ -170,8 +170,6 @@ selectFilter.addEventListener('change', (event) => {
 				<div class="icon_name">${icon.name}</div>
 			</div>`;
 		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
-		console.log(icon);
-		console.log(icon.color);
 		});
 	} if (event.target.value == "vegetable") {
 		vegetIcons.forEach((icon, index) => {
@@ -181,8 +179,6 @@ selectFilter.addEventListener('change', (event) => {
 				<div class="icon_name">${icon.name}</div>
 			</div>`;
 		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
-		console.log(icon);
-		console.log(icon.color);
 		});
 	} if (event.target.value == "user") {
 		userIcons.forEach((icon, index) => {
@@ -192,11 +188,8 @@ selectFilter.addEventListener('change', (event) => {
 				<div class="icon_name">${icon.name}</div>
 			</div>`;
 		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
-		console.log(icon);
-		console.log(icon.color);
-
 		});
-	}if (event.target.value == "all") {
+	} if (event.target.value == "all") {
 		allIconsList.forEach((icon, index) => {
 			document.querySelector(".icon-container").innerHTML +=
 		`<div class="icon-js">
@@ -204,10 +197,7 @@ selectFilter.addEventListener('change', (event) => {
 			<div class="icon_name">${icon.name}</div>
 		</div>`;
 		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
-		console.log(icon);
-		console.log(icon.color);
-
-		})
+		});
 	}
 
 }
