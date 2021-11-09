@@ -112,25 +112,12 @@ const allIconsList = [
 		color: 'blue'
 	}
 ];
-
 console.log(allIconsList);
 
 // Milestone 1
 // Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell’icona e l’icona stessa.
 
-// Per ogni elemento dell'array stampo i valori all'interno in un nuovo div dentro il container in html
-allIconsList.forEach((icon, index) => {
-	document.querySelector(".icon-container").innerHTML +=
-	`<div class="icon-js">
-		<i class="${icon.family} ${icon.prefix}${icon.name}"></i>
-		<div class="icon_name">${icon.name}</div>
-	</div>`;
-	console.log(icon.name, "è del tipo:", icon.type);
-	// Milestone 2
-	// Ciascuna icona ha una proprietà “color”: utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
-	// Per ogni elemento dell'array gli inserisco il rispettivo colore in style
-	document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
-});
+printSelected (allIconsList);
 
 // Milestone 3
 // Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l’utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
@@ -176,11 +163,15 @@ selectFilter.addEventListener('change', (event) => {
 
 function printSelected (array) {
 	array.forEach((icon, index) => {
+	// Per ogni elemento dell'array stampo i valori all'interno in un nuovo div dentro il container in html
 		document.querySelector(".icon-container").innerHTML +=
 		`<div class="icon-js">
 			<i class="${icon.family} ${icon.prefix}${icon.name}"></i>
 			<div class="icon_name">${icon.name}</div>
 		</div>`;
+	// Milestone 2
+	// Ciascuna icona ha una proprietà “color”: utilizzare questa proprietà per visualizzare le icone del colore corrispondente.
+	// Per ogni elemento dell'array gli inserisco il rispettivo colore in style
 	document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
 	});
 }
