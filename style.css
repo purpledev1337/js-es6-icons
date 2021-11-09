@@ -35,7 +35,7 @@ nav, .icon.icon {
     text-align: center;
     background-color: white;
     border-radius: 10px;
-    box-shadow: -1px -1px 1px 0.2px inset grey;
+    box-shadow: -1px -1px 1px 0.5px inset rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: center;

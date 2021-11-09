@@ -163,42 +163,24 @@ const selectFilter = document.querySelector('.icons_filter');
 selectFilter.addEventListener('change', (event) => {
 	document.querySelector(".icon-container").innerHTML = "";
 	if (event.target.value == "animal") {
-		animalIcons.forEach((icon, index) => {
-			document.querySelector(".icon-container").innerHTML +=
-			`<div class="icon-js">
-				<i class="${icon.family} ${icon.prefix}${icon.name}"></i>
-				<div class="icon_name">${icon.name}</div>
-			</div>`;
-		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
-		});
+		printSelected(animalIcons);
 	} if (event.target.value == "vegetable") {
-		vegetIcons.forEach((icon, index) => {
-			document.querySelector(".icon-container").innerHTML +=
-			`<div class="icon-js">
-				<i class="${icon.family} ${icon.prefix}${icon.name}"></i>
-				<div class="icon_name">${icon.name}</div>
-			</div>`;
-		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
-		});
+		printSelected (vegetIcons);
 	} if (event.target.value == "user") {
-		userIcons.forEach((icon, index) => {
-			document.querySelector(".icon-container").innerHTML +=
-			`<div class="icon-js">
-				<i class="${icon.family} ${icon.prefix}${icon.name}"></i>
-				<div class="icon_name">${icon.name}</div>
-			</div>`;
-		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
-		});
+		printSelected (userIcons);
 	} if (event.target.value == "all") {
-		allIconsList.forEach((icon, index) => {
-			document.querySelector(".icon-container").innerHTML +=
+		printSelected (allIconsList);
+	}
+}
+);
+
+function printSelected (array) {
+	array.forEach((icon, index) => {
+		document.querySelector(".icon-container").innerHTML +=
 		`<div class="icon-js">
 			<i class="${icon.family} ${icon.prefix}${icon.name}"></i>
 			<div class="icon_name">${icon.name}</div>
 		</div>`;
-		document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
-		});
-	}
-
+	document.querySelectorAll(".icon-js > i")[index].style.color = icon.color;
+	});
 }
-);
